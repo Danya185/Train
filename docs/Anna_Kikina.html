@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Анна Кикина</title>
@@ -10,77 +10,112 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <style>
-        .round {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 50%;
+      /* Общие стили */
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
         }
         
-        /* Адаптация навигации */
-        .navbar-brand img {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
+        h5 {
+            margin-top: 2rem;
+            color: #0d6efd;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #0d6efd;
         }
         
-        /* Адаптация карусели */
-        .carousel-container {
-            width: 100%;
-            max-width: 950px;
-            margin: 0 auto;
+        .container {
+            padding: 0 15px;
         }
         
         .carousel-item img {
-            width: 100%;
-            height: auto;
-            max-height: 595px;
             object-fit: cover;
+            width: 100%;
+        }
+      
+        /* Карусель */
+        .carousel-container {
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        /* Адаптация текста */
-        .bio-container {
-            padding: 15px;
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
         }
         
-        .bio-container h5 {
-            margin-top: 20px;
+        /* Контент */
+        .content-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
-        .bio-container p {
-            margin-bottom: 15px;
+        p {
+            margin-bottom: 1.2rem;
             text-align: justify;
         }
         
-        /* Кнопка назад */
-        .back-button-container {
-            padding: 15px;
+        .back-btn {
+            margin: 20px 0;
+            font-weight: 500;
         }
-        
-        /* Адаптация для маленьких экранов */
+          
+        /* Адаптация для мобильных */
         @media (max-width: 768px) {
             .navbar-brand img {
-                max-width: 250px;
+                width: 200px;
             }
             
             .carousel-item img {
-                height: 300px;
+                height: 300px !important;
             }
             
-            .search-form {
-                margin-top: 10px;
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            h5 {
+                font-size: 1.25rem;
+            }
+        }
+        
+        /* Адаптация для планшетов */
+        @media (min-width: 768px) and (max-width: 992px) {
+            .carousel-item img {
+                height: 450px !important;
+            }
+        }
+        
+        /* Адаптация для компьютеров */
+        @media (min-width: 992px) {
+            .carousel-container {
+                max-width: 900px;
+            }
+            
+            .carousel-item img {
+                height: 550px;
+            }
+            
+            .content-section {
+                padding: 2.5rem;
             }
         }
     </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">
-            <img src="History_cosmos.png" alt="Logo" class="img-fluid" />
+            <img src="History_cosmos.png" alt="Logo" width="350" class="img-fluid" />
           </a>
           <button
             class="navbar-toggler"
@@ -96,24 +131,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Главная</a
-                >
+                <a class="nav-link active" aria-current="page" href="#">Главная</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"
-                  >Фотографии</a
-                >
+                <a class="nav-link active" aria-current="page" href="#">Фотографии</a>
               </li>
-  
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Ссылки</a>
               </li>
             </ul>
-  
-            <form class="d-flex search-form" role="search">
+            <form class="d-flex" role="search">
               <input
-                class="form-control me-1"
+                class="form-control me-2"
                 type="search"
                 placeholder="Спроси"
                 aria-label="Search"
@@ -123,48 +152,52 @@
           </div>
         </div>
     </nav>
-    
-    <div class="back-button-container">
-        <a href="index.html" class="btn btn-primary">Вернуться назад</a>
-    </div>
-    
-    <div class="container my-3">
-        <div class="row">
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Кнопка назад -->
+        <div class="my-4">
+            <a href="index.html" class="btn btn-primary back-btn">
+                <i class="bi bi-arrow-left"></i> Вернуться назад
+            </a>
+        </div>
+
+        <!-- Карусель с фотографиями -->
+        <div class="row justify-content-center my-4">
             <div class="col-12">
-                <div id="carouselExampleIndicators" class="carousel slide carousel-container">
+                <div id="cosmonautCarousel" class="carousel slide carousel-container" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#cosmonautCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#cosmonautCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#cosmonautCarousel" data-bs-slide-to="2"></button>
                     </div>
                     <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="K_4.jpg" class="d-block w-100" alt="Увы, не удалось загрузить фото">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="K_7.jpg" class="d-block w-100" alt="Увы, не удалось загрузить фото">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="K_8.jpg" class="d-block w-100" alt="Увы, не удалось загрузить фото">
-                      </div>
+                        <div class="carousel-item active">
+                            <img src="K_4.jpg" class="d-block w-100" alt="Олег Артемьев в космосе">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="K_7.jpg" class="d-block w-100" alt="Олег Артемьев на МКС">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="K_8.jpg" class="d-block w-100" alt="Олег Артемьев во время выхода в открытый космос">
+                        </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Предыдущий</span>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#cosmonautCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Предыдущий</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Следующий</span>
+                    <button class="carousel-control-next" type="button" data-bs-target="#cosmonautCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Следующий</span>
                     </button>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="container bio-container">
-        <div>
-          <h5>Биография</h5>
-          <p>Кикина Анна Юрьевна родилась 27 августа 1984 года в Новосибирске. Окончила новосибирскую школу № 29 (школа здорового образа жизни), специальный класс «Юный спасатель»</p>
+
+        <!-- Биография и информация -->
+        <div class="content-section">
+            <h5>Биография</h5>
+             <p>Кикина Анна Юрьевна родилась 27 августа 1984 года в Новосибирске. Окончила новосибирскую школу № 29 (школа здорового образа жизни), специальный класс «Юный спасатель»</p>
           <p>В 2005 году окончила курсы при МЧС, инструктор по обучению населения основам первой помощи, имеет удостоверение спасателя. В 2006 году окончила с отличием Новосибирскую государственную академию водного транспорта по специальности «Защита в чрезвычайных ситуациях», инженер-гидротехник. В 2008 году там же защитила диплом по специальности «Экономика и управление на предприятии (транспорта)» с квалификацией «экономист-менеджер». В школе и институте занималась различными видами спорта — плаванием, единоборствами, настольным теннисом, водным туризмом, прыжками с парашютом.</p>
           <p>Работала инструктором по плаванию, гидом-проводником на Алтае, обучала кадетов-спасателей, до 2012 года работала радиоведущим.</p>
           <p>Муж — Александр Сердюк, тренер-преподаватель по физической подготовке в Центре подготовки космонавтов, участник набора космонавтов 2018 года.</p>
@@ -189,6 +222,11 @@
           <p>Начальный этап реабилитации Анны Кикиной после завершения космического полёта прошёл в Космическом центре им. Линдона Джонсона NASA в Хьюстоне (штат Техас) при участии врачей Центра подготовки космонавтов им. Ю. А. Гагарина. Дальнейшая послеполётная реабилитация Кикиной проходила в Звёздном городке.</p>
           <p>Продолжительность полёта — 157 суток 10 часов 1 минута.</p>
         </div>
-      </div>
-  </body>
+    </main>
+   <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 История космонавтики</p>
+        </div>
+    </footer>
+</body>
 </html>
